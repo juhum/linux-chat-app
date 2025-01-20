@@ -66,14 +66,14 @@ int main() {
     // Send client name
     printf("Enter your name: ");
     fgets(message, BUFFER_SIZE, stdin);
-    message[strcspn(message, "\n")] = '\0'; // Remove newline character
+    message[strcspn(message, "\n")] = '\0';
     write(sock, message, strlen(message));
 
     pthread_create(&tid, NULL, receive_messages, (void *)&sock);
 
     while (1) {
         fgets(message, BUFFER_SIZE, stdin);
-        message[strcspn(message, "\n")] = '\0'; // Remove newline character
+        message[strcspn(message, "\n")] = '\0';
 
         if (strncmp(message, "/file ", 6) == 0) {
             char *recipient_name = strtok(message + 6, " ");
