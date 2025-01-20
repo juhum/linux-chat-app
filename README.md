@@ -22,7 +22,6 @@ This is a simple chat application written in C for Linux. It supports multiple c
 ### Prerequisites
 
 - GCC (GNU Compiler Collection)
-- Make
 
 ### Installation
 
